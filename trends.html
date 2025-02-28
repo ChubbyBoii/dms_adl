@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trends - Social Media Disaster Analytics</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="System Logo">
+                <h2>Disaster Analytics</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="trends.html" class="active"><i class="fas fa-chart-bar"></i> Trends</a></li>
+                <li><a href="geospatial.html"><i class="fas fa-map-marked-alt"></i> Geospatial Data</a></li>
+                <li><a href="sentiment-analysis.html"><i class="fas fa-comments"></i> Sentiment Analysis</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Logged in as <strong>Analyst</strong></p>
+                <a href="#" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1>Trends Analysis</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for hashtags, locations, or keywords...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <!-- Trends Section -->
+            <div class="trends-section">
+                <!-- Trending Hashtags -->
+                <div class="trends-container">
+                    <h3>Trending Hashtags</h3>
+                    <ul class="trends-list">
+                        <li><span class="hashtag">#FloodRelief</span> <span class="count">12,345 posts</span></li>
+                        <li><span class="hashtag">#EmergencyResponse</span> <span class="count">9,876 posts</span></li>
+                        <li><span class="hashtag">#DisasterAid</span> <span class="count">8,543 posts</span></li>
+                        <li><span class="hashtag">#StaySafe</span> <span class="count">7,890 posts</span></li>
+                    </ul>
+                </div>
+
+                <!-- Post Volume Over Time Chart -->
+                <div class="chart-container">
+                    <h3>Post Volume Over Time</h3>
+                    <canvas id="postVolumeChart"></canvas>
+                </div>
+
+                <!-- Trending Topics -->
+                <div class="trends-container">
+                    <h3>Trending Topics</h3>
+                    <ul class="trends-list">
+                        <li><span class="topic">Flood Relief Efforts</span> <span class="count">15,678 posts</span></li>
+                        <li><span class="topic">Emergency Shelters</span> <span class="count">12,345 posts</span></li>
+                        <li><span class="topic">Donation Drives</span> <span class="count">10,987 posts</span></li>
+                        <li><span class="topic">Weather Updates</span> <span class="count">9,876 posts</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Example: Chart.js for Post Volume Over Time
+        const postVolumeCtx = document.getElementById('postVolumeChart').getContext('2d');
+        const postVolumeChart = new Chart(postVolumeCtx, {
+            type: 'line',
+            data: {
+                labels: ['12 AM', '3 AM', '6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM'],
+                datasets: [{
+                    label: 'Posts',
+                    data: [120, 150, 300, 450, 600, 800, 700, 500],
+                    borderColor: '#1abc9c',
+                    fill: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Post Volume Over Time',
+                    },
+                },
+            },
+        });
+
+        // Example: Logout Functionality
+        document.querySelector('.logout-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Logging out...');
+            window.location.href = 'index.html'; // Redirect to login page
+        });
+    </script>
+</body>
+</html>

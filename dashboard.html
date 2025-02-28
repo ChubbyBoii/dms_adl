@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Disaster Analytics Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="System Logo">
+                <h2>Disaster Analytics</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="trends.html"><i class="fas fa-chart-bar"></i> Trends</a></li>
+                <li><a href="geospatial.html"><i class="fas fa-map-marked-alt"></i> Geospatial Data</a></li>
+                <li><a href="sentiment-analysis.html"><i class="fas fa-comments"></i> Sentiment Analysis</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Logged in as <strong>Analyst</strong></p>
+                <a href="#" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1>Social Media Disaster Analytics</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for hashtags, locations, or keywords...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <!-- Cards Section -->
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Posts</h3>
+                    <p class="count">12,345</p>
+                    <p class="description">Posts collected in the last 24 hours.</p>
+                </div>
+                <div class="card">
+                    <h3>Positive Sentiment</h3>
+                    <p class="count">65%</p>
+                    <p class="description">Positive posts about relief efforts.</p>
+                </div>
+                <div class="card">
+                    <h3>Negative Sentiment</h3>
+                    <p class="count">25%</p>
+                    <p class="description">Negative posts about disaster impact.</p>
+                </div>
+                <div class="card">
+                    <h3>Top Hashtag</h3>
+                    <p class="count">#FloodRelief</p>
+                    <p class="description">Most trending hashtag.</p>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts">
+                <div class="chart-container">
+                    <h3>Post Volume Over Time</h3>
+                    <canvas id="postVolumeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Sentiment Distribution</h3>
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Geospatial and Trending Hashtags Section -->
+            <div class="map-trends">
+                <div class="map-container">
+                    <h3>Affected Areas Heatmap</h3>
+                    <div id="map"></div>
+                </div>
+                <div class="trends-container">
+                    <h3>Trending Hashtags</h3>
+                    <ul class="trends-list">
+                        <li><span class="hashtag">#FloodRelief</span> <span class="count">12,345 posts</span></li>
+                        <li><span class="hashtag">#EmergencyResponse</span> <span class="count">9,876 posts</span></li>
+                        <li><span class="hashtag">#DisasterAid</span> <span class="count">8,543 posts</span></li>
+                        <li><span class="hashtag">#StaySafe</span> <span class="count">7,890 posts</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript for Interactivity -->
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

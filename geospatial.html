@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geospatial Data - Disaster Response System</title>
+    <link rel="stylesheet" href="geospatial-styles.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="geospatial-container">
+        
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="System Logo">
+                <h2>Disaster Analytics</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" class="active"><i class="fas fa-map-marked-alt"></i> Geospatial Data</a></li>
+                <li><a href="sentiment.html"><i class="fas fa-comments"></i> Sentiment Analysis</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>Logged in as <strong>Analyst</strong></p>
+                <a href="#" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
+       
+        <div class="main-content">
+         
+            <div class="header">
+                <h1>Geospatial Data</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for locations or regions...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            
+            <div class="map-container">
+                <h3>Affected Areas Heatmap</h3>
+                <div id="map"></div>
+            </div>
+
+            
+            <div class="metrics">
+                <div class="metric-card">
+                    <h3>Total Affected Areas</h3>
+                    <p class="count">15</p>
+                    <p class="description">Areas identified for immediate response.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Most Affected Region</h3>
+                    <p class="count">Zone 4</p>
+                    <p class="description">Highest number of disaster reports.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Resources Deployed</h3>
+                    <p class="count">80%</p>
+                    <p class="description">Resources utilized in affected areas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    <script src="geospatial-script.js"></script>
+</body>
+</html>
